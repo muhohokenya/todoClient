@@ -1,0 +1,27 @@
+<div class="home">
+    <div class="sidebar">
+        <p class="logo">Daily Dev Ops</p>
+    </div>
+    <div class="task">
+        <h1>TODO APP</h1>
+        <div class="disTodo">
+            <input type="text" [(ngModel)]="name">
+            <div [ngSwitch] ="render">
+                <button *ngSwitchCase = "'Add'" class="addTaskBtn" (click)="AddTask()">Add Task</button>
+                <button *ngSwitchCase = "'Edit'" class="addTaskBtn" (click)="
+                EditTask()">Edit Task</button>
+            </div>
+        </div> 
+        <ol class="list">
+            <li *ngFor="let task of tasks" class="todo" >
+                {{ task.name }}
+               <div class="opts">
+                <button (click) = "editTodo(task)">Edit</button>
+                <button (click) = "deleteTask(task)">Delete</button>
+               </div>
+            </li>
+            
+
+        </ol>
+    </div>
+</div>
